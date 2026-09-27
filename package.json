@@ -1,0 +1,49 @@
+{
+    "name": "duck-store",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": ">=22.12"
+    },
+    "scripts": {
+        "dev": "concurrently -k -n api,web \"npm:dev:server\" \"npm:dev:client\"",
+        "dev:server": "tsx watch server/src/index.ts",
+        "dev:client": "vite --config client/vite.config.ts",
+        "db:setup": "tsx server/scripts/setup.ts",
+        "db:seed": "tsx server/scripts/seed.ts",
+        "test": "node --import tsx --test \"server/**/*.test.ts\" \"client/tests/**/*.test.ts\"",
+        "test:api": "tsc -p tests && node --import tsx --test --test-concurrency=1 \"tests/api/*.test.ts\"",
+        "test:e2e": "tsc -p tests && npm run build && tsx tests/e2e/prepare.ts && playwright test -c tests/e2e/playwright.config.ts",
+        "typecheck": "tsc --noEmit && tsc --noEmit -p client",
+        "format": "biome format --write .",
+        "format:check": "biome format .",
+        "lint": "biome check .",
+        "build": "npm run typecheck && tsc -p server/tsconfig.json && vite build --config client/vite.config.ts",
+        "start": "cross-env NODE_ENV=production node dist/server/src/index.js"
+    },
+    "dependencies": {
+        "decimal.js": "^10.6.0",
+        "dotenv": "^17.2.2",
+        "express": "^5.1.0",
+        "lucide-react": "^0.468.0",
+        "mysql2": "^3.15.0",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "zod": "^4.1.11"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "2.5.14",
+        "@playwright/test": "^1.63.0",
+        "@types/express": "^5.0.3",
+        "@types/node": "^24.5.2",
+        "@types/react": "^19.2.0",
+        "@types/react-dom": "^19.2.0",
+        "@vitejs/plugin-react": "^5.0.3",
+        "concurrently": "^9.2.1",
+        "cross-env": "^10.1.0",
+        "tsx": "^4.20.6",
+        "typescript": "^5.9.2",
+        "vite": "^7.1.7"
+    }
+}

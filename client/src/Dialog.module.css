@@ -1,0 +1,39 @@
+.dialog {
+    border: 1px solid #e0e7ec;
+    padding: 26px;
+    border-radius: 13px;
+    width: min(520px, calc(100% - 32px));
+    max-height: calc(100dvh - 48px);
+    overflow-y: auto;
+    color: inherit;
+    box-shadow: 0 24px 90px #142b4a38;
+}
+.dialog::backdrop {
+    background: #14223266;
+}
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.heading h2 {
+    font-size: 23px;
+    letter-spacing: -0.3px;
+    font-weight: 600;
+    margin: 0;
+}
+.description {
+    color: #6b7680;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 10px 0 25px;
+}
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #edf0f3;
+}

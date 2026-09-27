@@ -1,0 +1,75 @@
+:root {
+    --color-text: #20272b;
+    --color-surface: #fff;
+    --color-primary: #006bdf;
+    --color-primary-hover: #005cc3;
+    --color-danger: #d6313d;
+    --color-danger-hover: #be2530;
+    --color-focus: #72b7ff;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--color-text);
+    background: var(--color-surface);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+button,
+input,
+select {
+    font: inherit;
+}
+button,
+a,
+input,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+button {
+    cursor: pointer;
+}
+button:disabled {
+    cursor: default;
+    opacity: 0.55;
+}
+button,
+a {
+    touch-action: manipulation;
+}
+:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 4px;
+}
+/* Alerts appear on the page and inside both dialogs. */
+.alert {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 13px 16px;
+    border-radius: 7px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.alert-success {
+    color: #256344;
+    background: #eaf7ef;
+    border: 1px solid #cce9d7;
+}
+.alert-error {
+    color: #982b35;
+    background: #fff1f2;
+    border: 1px solid #f2d1d5;
+}
+@media (prefers-reduced-motion: no-preference) {
+    button {
+        transition: background-color 0.15s ease;
+    }
+}

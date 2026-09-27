@@ -1,0 +1,41 @@
+.fields {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 18px;
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #3c4954;
+    font-size: 14px;
+    font-weight: 550;
+}
+.field input,
+.field select {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    border: 1px solid #cfd9e1;
+    border-radius: 6px;
+    background: var(--color-surface);
+    color: #263440;
+    padding: 10px 12px;
+    font-size: 15px;
+}
+.field input[readonly] {
+    background: #f3f6f8;
+    color: #707b84;
+}
+.error {
+    color: #ae2d3a;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+}
